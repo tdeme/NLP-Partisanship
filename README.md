@@ -8,4 +8,4 @@
 5. Create a tool with the model that can be used by a non-programmer
 
 ## Part 1
-The first part of this project was collecting the data. The notebook that was used to collect the data for this project can be found at `Notebooks and Scripts/tweet_scraping.pynb`. 
+The first part of this project was collecting the data. The notebook that was used to collect the data for this project can be found at `Notebooks and Scripts/tweet_scraping.ipynb`. This notebook used the python package [twint] (https://github.com/twintproject/twint) to scrape tweets from 
