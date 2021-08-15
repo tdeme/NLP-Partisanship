@@ -117,7 +117,8 @@ def run_tests(urls):
 def main():
     import os
 
-    os.environ['KMP_DUPLICATE_LIB_OK']='True'
+    #If you are hit with an error, you can try uncommenting the line below.
+    #os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
     urls = (('https://www.cnn.com/2021/03/06/opinions/biden-gop-relief-bill-zelizer/index.html',0),
     ('https://www.cnn.com/2021/03/06/opinions/tweets-gop-zoe-lofgren-ghitis/index.html',0),
