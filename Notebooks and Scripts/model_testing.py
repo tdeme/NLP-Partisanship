@@ -70,8 +70,8 @@ def evaluate(score, tally, party):
 def run_tests(urls):
     #Much of this syntax comes from the Hugging Face documentation.
     
-    my_tokenizer = AutoTokenizer.from_pretrained('./recent_twitter_model')
-    my_bert_model = DistilBertForSequenceClassification.from_pretrained('./recent_twitter_model')
+    my_tokenizer = AutoTokenizer.from_pretrained('../recent_twitter_model')
+    my_bert_model = DistilBertForSequenceClassification.from_pretrained('../recent_twitter_model')
     my_tally = []
 
     control_tokenizer = AutoTokenizer.from_pretrained('spencerh/rightpartisan')
