@@ -17,4 +17,10 @@ Using [scikit-learn's](https://scikit-learn.org/stable/modules/generated/sklearn
 <img width="511" alt="Screen Shot 2021-08-18 at 12 34 01 PM" src="https://user-images.githubusercontent.com/81947750/129960865-490567bf-f161-407b-bae2-c7bb4ff5466a.png">
 
 ## Part 3
+Now the fun part! Using the collected tweets, and following the [Hugging Face documentation](https://huggingface.co/transformers/training.html) for the pretrained transformer, a BERT model was trained to predict the party of a tweet's author with relatively high accuracy. If you're interested, go ahead and download the datasets yourself and train a model using the code in `/Notebooks and Scripts/model_training.ipynb`, you should get a validation accuracy of around 92%!. However, this accuracy doesn't reflect the model's performance in practice (to be discussed further later). 
 
+## Part 4
+The hard part is over. All that was left to do was to download the tokenizer and model weights, and test them out locally using the `/Notebooks and Scripts/model_testing.py` script. This Python script tests the model trained here using 10 randomly selected articles that were judged (by me) to be partisan: 5 left-leaning and 5 right-leaning. To scrape the article's from the urls, the `Article()` object from the [Newspaper3k](https://newspaper.readthedocs.io/en/latest/) web scraping Python module was used to extract the plain text to be tokenized and finally classified. 
+
+## Part 5
+The end-goal of this project was originally to make a tool that people could use to detect bias in sources of media like articles and tweets. The simplest way to interact with the original PyTorch model is through the general classifier (at `/Notebooks and Scripts/general_classifier.py`). Here, you can either enter the url of an article or plain text, and see the output of the predictions after being put through the softmax function (gets probabilistic outputs based on the logit outputs of the model). While a Chrome extension was developed as well, its performance was unsatisfactory. 
