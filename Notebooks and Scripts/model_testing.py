@@ -70,8 +70,8 @@ def evaluate(score, tally, party):
 def run_tests(urls):
     #Much of this syntax comes from the Hugging Face documentation.
     
-    my_tokenizer = AutoTokenizer.from_pretrained('../recent_twitter_model')
-    my_bert_model = DistilBertForSequenceClassification.from_pretrained('../recent_twitter_model')
+    my_tokenizer = AutoTokenizer.from_pretrained('./recent_twitter_model')
+    my_bert_model = DistilBertForSequenceClassification.from_pretrained('./recent_twitter_model')
     my_tally = []
 
     control_tokenizer = AutoTokenizer.from_pretrained('spencerh/rightpartisan')
@@ -117,19 +117,28 @@ def run_tests(urls):
 def main():
     import os
 
-    #If you are hit with an error, you can try uncommenting the line below.
-    #os.environ['KMP_DUPLICATE_LIB_OK']='True'
+    os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
     urls = (('https://www.cnn.com/2021/03/06/opinions/biden-gop-relief-bill-zelizer/index.html',0),
     ('https://www.cnn.com/2021/03/06/opinions/tweets-gop-zoe-lofgren-ghitis/index.html',0),
     ('https://www.cnn.com/2021/03/05/opinions/pandemic-lessons-preparedness-besser/index.html',0),
     ('https://www.cnn.com/2021/03/04/opinions/joe-bidens-big-chance-sachs/index.html',0),
     ('https://www.cnn.com/2021/03/04/opinions/texas-covid-restrictions-science-mehnert/index.html',0),
+    ('https://www.cnn.com/2021/10/28/opinions/trumps-ridiculous-letter-to-wall-street-journal-dantonio/index.html',0),
+    ('https://www.msnbc.com/opinion/liberty-university-sexual-assault-allegations-reveal-flaws-evangelical-institutions-n1282463',0),
+    ('https://www.msnbc.com/opinion/virginia-s-youngkin-spotlights-woman-who-tried-ban-toni-morrison-n1282458',0),
+    ('https://www.msnbc.com/opinion/virginia-s-youngkin-spotlights-woman-who-tried-ban-toni-morrison-n1282458',0),
+    ('https://www.msnbc.com/opinion/murdaugh-murder-mystery-highlights-power-privilege-n1282320',0),
     ('https://www.foxnews.com/opinion/afghanistan-leadership-rep-michael-waltz',1),
     ('https://www.foxnews.com/opinion/afghanistan-mission-impossible-biden-fantasyland-endgame-k-t-mcfarland',1),
     ('https://www.foxnews.com/opinion/afghanistan-biden-team-us-pivot-mike-pompeo',1),
     ('https://www.foxnews.com/opinion/gov-cuomo-resigned-cnn-chris-cuomo-tim-graham',1),
     ('https://www.foxnews.com/opinion/biden-broken-border-policies-crisis-arizona-ag-mark-brnovich',1),
+    ('https://www.foxnews.com/opinion/att-racial-reeducation-racism-white-trait-christopher-rufo',1),
+    ('https://www.foxnews.com/opinion/tucker-carlson-biden-america-stupid-not-cross-border-illegally',1),
+    ('https://www.foxnews.com/opinion/liberal-media-mcauliffe-virginia-gubernatorial-race-dan-gainor',1),
+    ('https://www.foxnews.com/opinion/joe-concha-mcauliffe-biden-trump-virginia-race-youngkin',1),
+    ('https://www.foxnews.com/opinion/biden-sanders-socialism-spending-rep-michael-burgess',1),
     )
 
     print(run_tests(urls))
